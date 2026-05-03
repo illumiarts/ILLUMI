@@ -40,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .logo{font-family:"Open Sans",sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:2px;color:#fff;text-decoration:none}
 .logo span{color:var(--red)}
 .nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{color:var(--tx2);text-decoration:none;font-size:0.85rem;font-weight:400;font-family:"Open Sans",sans-serif;transition:color .2s}
+.nav-links a{color:var(--tx2);text-decoration:none;font-size:0.95rem;font-weight:400;font-family:"Open Sans",sans-serif;transition:color .2s}
 .nav-links a:hover{color:var(--red)}
 .nav-cta{background:var(--red);color:#fff;width:213px;height:40px;display:inline-flex;align-items:center;justify-content:center;font-family:"Open Sans",sans-serif;font-size:0.85rem;font-weight:700;text-decoration:none;border-radius:6px;transition:all .2s;letter-spacing:0.5px}
 .nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
@@ -114,19 +114,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
    ANIMATIONS
    ================================================ */
 
-/* FIX #6 — Hero title: slide-in (translateY) not float */
-.slide-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+/* Smooth float entrance animations */
+.slide-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
 .slide-in.visible{opacity:1;transform:translateY(0)}
-.slide-left{opacity:0;transform:translateX(-30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.slide-left{
+  opacity:0;
+  transform:translateX(-20px);
+  transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1),transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
 .slide-left.visible{opacity:1;transform:translateX(0)}
-
-/* FIX #10 — Why IllumiArts containers: float-up entrance animation */
-.float-up{opacity:0;transform:translateY(40px);transition:opacity 0.6s ease,transform 0.6s ease}
+/* Float-up — smooth staggered entrance for cards */
+.float-up{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);
+}
 .float-up.visible{opacity:1;transform:translateY(0)}
-.float-up:nth-child(2){transition-delay:0.1s}
-.float-up:nth-child(3){transition-delay:0.2s}
-.float-up:nth-child(4){transition-delay:0.3s}
-.float-up:nth-child(5){transition-delay:0.4s}
+.float-up:nth-child(2){transition-delay:0.12s}
+.float-up:nth-child(3){transition-delay:0.24s}
+.float-up:nth-child(4){transition-delay:0.36s}
+.float-up:nth-child(5){transition-delay:0.48s}
+.float-up:nth-child(6){transition-delay:0.6s}
+.float-up:nth-child(7){transition-delay:0.72s}
+.float-up:nth-child(8){transition-delay:0.84s}
 
 /* ================================================
    HERO SECTION
@@ -241,7 +255,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .feat-icon,.feat-title,.feat-desc{position:relative;z-index:1}
 .feat-icon{width:52px;height:52px;border-radius:12px;background:rgba(255,0,110,0.08);border:1px solid rgba(255,0,110,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--red)}
 .feat-title{font-family:"Open Sans",sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:10px}
-.feat-desc{font-family:"Open Sans",sans-serif;font-size:14px;color:var(--tx2);line-height:1.85}
+.feat-desc{font-family:"Open Sans",sans-serif;font-size:16px;color:var(--tx2);line-height:1.85}
 
 /* ================================================
    FIX #7 — WE LOVE ANIME title/body alignment
@@ -272,7 +286,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .prod-name{font-family:"Poppins",sans-serif;font-size:28px;font-weight:200;margin-bottom:4px}
 .prod-size{font-family:"Open Sans",sans-serif;font-size:14px;letter-spacing:2px;color:var(--tx3);margin-bottom:20px;text-transform:uppercase}
 .prod-feats{list-style:none;margin-bottom:24px}
-.prod-feats li{display:flex;align-items:flex-start;gap:10px;font-family:"Open Sans",sans-serif;font-size:14px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bd);line-height:1.4}
+.prod-feats li{display:flex;align-items:flex-start;gap:10px;font-family:"Open Sans",sans-serif;font-size:16px;color:var(--tx2);padding:9px 0;border-bottom:1px solid var(--bd);line-height:1.5}
 .prod-feats li:last-child{border-bottom:none}
 .fd{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px}
 .fd-g{background:var(--red)}
@@ -301,7 +315,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .team-body{padding:20px 16px}
 .team-role{font-family:"Open Sans",sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:6px}
 .team-name{font-family:"Poppins",sans-serif;font-size:20px;font-weight:200;color:#fff;margin-bottom:8px}
-.team-bio{font-family:"Open Sans",sans-serif;font-size:13px;color:var(--tx3);line-height:1.7}
+.team-bio{font-family:"Open Sans",sans-serif;font-size:15px;color:var(--tx3);line-height:1.7}
 
 /* ================================================
    FIX #4/#5 — TESTIMONIALS
@@ -315,7 +329,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .testi-body{padding:24px 20px}
 .testi-tag{font-family:"Open Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block}
 .stars{color:var(--red);font-size:18px;letter-spacing:2px;margin-bottom:14px}
-.quote{font-family:"Open Sans",sans-serif;font-size:14px;color:#fff;line-height:1.85;font-style:italic;margin-bottom:18px}
+.quote{font-family:"Open Sans",sans-serif;font-size:16px;color:#fff;line-height:1.85;font-style:italic;margin-bottom:18px}
 .reviewer{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--bd)}
 .avatar-ph{width:44px;height:44px;border-radius:50%;background:var(--dk4);border:2px solid rgba(255,0,110,0.2);display:flex;align-items:center;justify-content:center;color:var(--red);font-weight:700;font-size:1rem;flex-shrink:0}
 .rev-name{font-family:"Open Sans",sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
@@ -329,7 +343,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .press-card:hover{border-color:rgba(255,0,110,0.25)}
 .press-src{font-family:"Open Sans",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .press-src::before{content:"";width:16px;height:1px;background:var(--red)}
-.press-q{font-family:"Open Sans",sans-serif;font-size:14px;color:#fff;line-height:1.85;font-style:italic;margin-bottom:12px}
+.press-q{font-family:"Open Sans",sans-serif;font-size:16px;color:#fff;line-height:1.85;font-style:italic;margin-bottom:12px}
 .press-date{font-family:"Open Sans",sans-serif;font-size:12px;color:var(--tx3)}
 
 /* ================================================
@@ -351,7 +365,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .tl-dot{position:absolute;left:50%;top:24px;width:13px;height:13px;border-radius:50%;transform:translateX(-50%);z-index:2;border:2px solid var(--red);background:var(--dk)}
 .tl-item:nth-child(even) .tl-dot{border-color:var(--cy)}
 .tl-facts{list-style:none}
-.tl-facts li{font-family:"Open Sans",sans-serif;font-size:14px;color:var(--tx2);padding:4px 0}
+.tl-facts li{font-family:"Open Sans",sans-serif;font-size:16px;color:var(--tx2);padding:6px 0}
 
 /* ================================================
    ABOUT
@@ -361,7 +375,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .about-card:hover{border-color:rgba(255,0,110,0.3);transform:translateY(-4px)}
 .about-icon{width:56px;height:56px;border-radius:14px;background:rgba(255,0,110,0.08);border:1px solid rgba(255,0,110,0.2);display:flex;align-items:center;justify-content:center;color:var(--red);margin-bottom:20px}
 .about-title{font-family:"Open Sans",sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:14px}
-.about-text{font-family:"Open Sans",sans-serif;font-size:14px;color:var(--tx2);line-height:2}
+.about-text{font-family:"Open Sans",sans-serif;font-size:16px;color:var(--tx2);line-height:1.9}
 
 /* ================================================
    NUMBERS — We Take Pride
@@ -384,7 +398,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .faq-icon{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,0,110,0.3);display:flex;align-items:center;justify-content:center;color:var(--red);font-size:1.2rem;flex-shrink:0}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-a.open{max-height:400px}
-.faq-inner{padding:0 28px 22px;font-family:"Open Sans",sans-serif;font-size:14px;color:var(--tx2);line-height:2;border-top:1px solid var(--bd)}
+.faq-inner{padding:0 28px 22px;font-family:"Open Sans",sans-serif;font-size:16px;color:var(--tx2);line-height:1.9;border-top:1px solid var(--bd)}
 .faq-inner p{padding-top:16px}
 .faq-inner a{color:var(--red);text-decoration:none}
 
@@ -406,7 +420,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .sh:nth-child(3){color:var(--cy)}
 .srow{display:grid;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--bd)}
 .srow:nth-child(even){background:rgba(255,255,255,0.015)}
-.sc{padding:13px 20px;font-family:"Open Sans",sans-serif;font-size:14px}
+.sc{padding:13px 20px;font-family:"Open Sans",sans-serif;font-size:15px}
 .sc:first-child{color:var(--tx3)}
 .sc-g{color:var(--red);font-weight:600}
 .sc-a{color:var(--cy);font-weight:600}
@@ -461,7 +475,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content
 .ship-wrap{border:1px solid var(--bd);border-radius:12px;overflow:hidden;max-width:980px;margin:0 auto}
 .ship-table{width:100%;border-collapse:collapse}
 .ship-table th{background:var(--dk4);padding:13px 20px;text-align:left;font-family:"Open Sans",sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--bd)}
-.ship-table td{padding:13px 20px;font-family:"Open Sans",sans-serif;font-size:14px;border-bottom:1px solid var(--bd);color:#fff}
+.ship-table td{padding:13px 20px;font-family:"Open Sans",sans-serif;font-size:15px;border-bottom:1px solid var(--bd);color:#fff}
 .ship-table tr:last-child td{border-bottom:none}
 .ship-table tr:nth-child(even) td{background:rgba(255,255,255,0.015)}
 .td-r{color:var(--tx2)}
@@ -484,7 +498,27 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
    ================================================ */
 @media(max-width:1024px){
   .trust-grid{grid-template-columns:repeat(3,1fr)}
-  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .team-grid{grid-template-columns:repeat(4,1fr)}
+  .prod-grid{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:repeat(3,1fr)}
+  .about-grid{grid-template-columns:repeat(3,1fr)}
+  .press-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr 1fr}
+}
+/* iPad portrait 768px */
+@media(max-width:768px){
+  .prod-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .press-grid{grid-template-columns:1fr}
+  .nums-grid{flex-wrap:wrap}
+  .num-item{width:45%;border-right:none;border-bottom:1px solid var(--bd);padding-bottom:20px;margin-bottom:20px}
+  .included-grid{grid-template-columns:1fr !important}
+  .ship-selector-wrap{padding:20px 16px 24px}
+  .ship-btn-row{flex-direction:column}
+  .ship-btn-row .btn{width:100%}
 }
 @media(max-width:860px){
   /* NAV */
@@ -875,7 +909,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
 
     <!-- SHIPPING SELECTOR + BUY BUTTONS -->
     <div class="ship-selector-wrap slide-in">
-      <div class="ship-selector-title">Select Your Region &amp; Size</div>
+      <div class="ship-selector-title">Select Your Region &amp; Size for DHL Shipping Rate</div>
 
       <select class="ship-region-select" id="hero-region" onchange="heroCalc()">
         <option value="">&#127758; Choose your country&hellip;</option>
@@ -1052,7 +1086,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
 <!-- SET YOUR MOOD VIDEO — 16:9 -->
 <div style="width:100%;background:var(--dk);padding:40px 5% 60px">
   <div style="position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#07080a;overflow:hidden;border-radius:12px;border:2px solid rgba(255,0,110,0.15)">
-    <iframe src="https://drive.google.com/file/d/1PVg4egHgr8caEVpqh8awA1_VJiZHW33b/preview" frameborder="0" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
+    <iframe src="https://drive.google.com/file/d/1PVg4egHgr8caEVpqh8awA1_VJiZHW33b/preview" frameborder="0" allow="autoplay" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
   </div>
 </div>
 
@@ -1083,7 +1117,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
   </div>
   <!-- Gaming video — 16:9 -->
   <div style="position:relative;width:100%;max-width:900px;margin:48px auto 0;aspect-ratio:16/9;background:#07080a;overflow:hidden;border-radius:12px;border:2px solid rgba(255,0,110,0.15)">
-    <iframe src="https://drive.google.com/file/d/1S9aOX3Df3wPMoCnIT7EHe4zc42l7APOC/preview" frameborder="0" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
+    <iframe src="https://drive.google.com/file/d/1S9aOX3Df3wPMoCnIT7EHe4zc42l7APOC/preview" frameborder="0" allow="autoplay" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
   </div>
 </section>
 
@@ -1097,8 +1131,8 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
     <div class="prod-card pro">
       <div class="prod-slider" id="pro-slider">
         <img src="https://static.wixstatic.com/media/990d0d_b43b7984355c47d3ad13b7c91302a9b4~mv2.jpg" alt="Anime LED PRO" class="active">
-        <img src="https://static.wixstatic.com/media/990d0d_4f33cc1baf024e95a1f4439018f360c1~mv2.png" alt="PRO Gaming Setup">
-        <img src="https://static.wixstatic.com/media/990d0d_4a82c291277d448c8b5d72c9f0e3004d~mv2.png" alt="PRO on Wall">
+        <img src="https://static.wixstatic.com/media/990d0d_4f33cc1baf024e95a1f4439018f360c1~mv2.png" alt="PRO Gaming Setup" loading="lazy">
+        <img src="https://static.wixstatic.com/media/990d0d_4a82c291277d448c8b5d72c9f0e3004d~mv2.png" alt="PRO on Wall" loading="lazy">
         <div class="prod-tag ptag-pro">PRO</div>
         <button class="slider-btn slider-prev" onclick="slideImg('pro-slider',-1)">&#8249;</button>
         <button class="slider-btn slider-next" onclick="slideImg('pro-slider',1)">&#8250;</button>
@@ -1250,11 +1284,11 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
     <!-- NANO -->
     <div class="prod-card nano">
       <div class="prod-slider" id="nano-slider">
-        <img src="https://drive.google.com/uc?export=view&id=1RiEvrErcABQQjLTKKzUF9ZixCmpIaC2w" alt="NANO Art Panel 1" class="active" style="background:transparent">
-        <img src="https://static.wixstatic.com/media/990d0d_95ffdd79ba244247b3b65e99fad340a5~mv2.jpg" alt="Anime LED NANO">
-        <img src="https://drive.google.com/uc?export=view&id=1SP5wnz3CmtOSP-tJp9yM4m73Lh8M7Ngl" alt="NANO Art Panel 2" style="background:transparent">
-        <img src="https://static.wixstatic.com/media/990d0d_ccb04ba4cb804797ba7378da8a566495~mv2.png" alt="NANO Frame">
-        <img src="https://static.wixstatic.com/media/990d0d_9d2ff4597d844cfeb6acba108b7455e0~mv2.jpg" alt="NANO Dimmable">
+        <img src="https://drive.google.com/uc?export=view&id=1RiEvrErcABQQjLTKKzUF9ZixCmpIaC2w" alt="NANO Girl Art Panel" class="active" loading="eager">
+        <img src="https://drive.google.com/uc?export=view&id=1SP5wnz3CmtOSP-tJp9yM4m73Lh8M7Ngl" alt="NANO Art Panel 2" loading="lazy">
+        <img src="https://static.wixstatic.com/media/990d0d_95ffdd79ba244247b3b65e99fad340a5~mv2.jpg" alt="Anime LED NANO" loading="lazy">
+        <img src="https://static.wixstatic.com/media/990d0d_ccb04ba4cb804797ba7378da8a566495~mv2.png" alt="NANO Frame" loading="lazy">
+        <img src="https://static.wixstatic.com/media/990d0d_9d2ff4597d844cfeb6acba108b7455e0~mv2.jpg" alt="NANO Dimmable" loading="lazy">
         <div class="prod-tag ptag-nano">NANO</div>
         <button class="slider-btn slider-prev" onclick="slideImg('nano-slider',-1)">&#8249;</button>
         <button class="slider-btn slider-next" onclick="slideImg('nano-slider',1)">&#8250;</button>
@@ -1414,8 +1448,8 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
     <h2 class="sec-h slide-in">What&rsquo;s Included?</h2>
     <p class="sec-sub">Everything you need to transform your space &mdash; straight from our factory to your door.</p>
     <div class="included-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
-      <div style="border-radius:16px;overflow:hidden;background:var(--dk3);border:1px solid var(--bd);position:relative;aspect-ratio:1/1">
-        <iframe src="https://drive.google.com/file/d/1e1wt7TFdjXSj8CcZ3Pv8FlzHvpWEQeFq/preview" width="100%" height="100%" frameborder="0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px"></iframe>
+      <div style="border-radius:16px;overflow:hidden;background:var(--dk3);border:1px solid var(--bd)">
+        <img src="https://drive.google.com/uc?export=view&id=1jqFnJv9gw5UV0n74s5TIebycAkLECE_h" alt="What's Included in the Box" style="width:100%;height:auto;display:block;border-radius:16px" loading="lazy">
       </div>
       <div>
         <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px">
@@ -1474,7 +1508,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
 <!-- VIDEO after testimonials — 16:9 -->
 <div style="width:100%;background:var(--dk3);padding:0 5% 60px">
   <div style="position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#07080a;overflow:hidden;border-radius:12px">
-    <iframe src="https://drive.google.com/file/d/1wE5TUCuByOOd9bOWo3l9QETWJJgL1Gtc/preview" frameborder="0" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
+    <iframe src="https://drive.google.com/file/d/1wE5TUCuByOOd9bOWo3l9QETWJJgL1Gtc/preview" frameborder="0" allow="autoplay" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
   </div>
 </div>
 
@@ -1616,7 +1650,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
   <div style="max-width:980px;margin:0 auto">
     <div class="included-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
       <div style="width:100%;aspect-ratio:1/1;position:relative;overflow:hidden;border-radius:16px;background:#07080a">
-        <iframe src="https://drive.google.com/file/d/11ZxxzBKd4DXLtd8tZ9xMmAIsGdl9m2tg/preview" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
+        <iframe src="https://drive.google.com/file/d/11ZxxzBKd4DXLtd8tZ9xMmAIsGdl9m2tg/preview" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
       </div>
       <div style="display:flex;flex-direction:column;justify-content:center;gap:20px">
         <span style="font-family:Open Sans,sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red)">Gaming Experience</span>
@@ -1640,20 +1674,27 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
   </div>
 </section>
 
+<!-- ABOUT VIDEO -->
+<div style="width:100%;background:var(--dk3);padding:0 5% 60px">
+  <div style="position:relative;width:100%;max-width:900px;margin:0 auto;aspect-ratio:16/9;background:#07080a;overflow:hidden;border-radius:12px;border:2px solid rgba(255,0,110,0.15)">
+    <iframe src="https://drive.google.com/file/d/12giKW6SLI1iz5dw3O_4J1qyobSOFZkeE/preview" frameborder="0" allow="autoplay" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>
+  </div>
+</div>
+
 <!-- TEAM -->
 <section class="sec">
   <span class="sec-tag slide-in">The Minds Behind the Light</span>
   <h2 class="sec-h slide-in">Our Team</h2>
   <span class="sec-sub3 slide-in">Dedication. Expertise. Passion.</span>
   <div class="team-grid">
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_12094e0080ee46918cb281300b8b17eb~mv2.png" alt="Farah Barnes" class="team-img"><div class="team-body"><div class="team-role">Architect, Founder</div><div class="team-name">Farah Barnes</div><div class="team-bio">25+ years at the forefront of design and innovation. A serial entrepreneur who shapes industries.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_63a3dda2273b4f3fb4b9fcda30106bcc~mv2.png" alt="Julian Barnes" class="team-img"><div class="team-body"><div class="team-role">Co-Founder &amp; Tech Lead</div><div class="team-name">Julian Barnes</div><div class="team-bio">Strategic thinking meets cultural curiosity. A gamer at heart who proves the best ideas live at the intersection of logic, play, and art.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_04c5baf4c35f4abb9e04ef10a5c29374~mv2.png" alt="Trent Van Blaricom" class="team-img"><div class="team-body"><div class="team-role">Architect, Managing Director</div><div class="team-name">Trent Van Blaricom</div><div class="team-bio">30+ years in lighting design and management. Sees both the big picture and the finest detail.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_2aabb72e354f4bad9ffa0063ec7ae914~mv2.png" alt="Sean Ghazavi" class="team-img"><div class="team-body"><div class="team-role">Engineer &amp; Product Director</div><div class="team-name">Sean Ghazavi</div><div class="team-bio">Bridges vision and reality through engineering, manufacturing, and prototyping.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_be732d19690c4d7f9024dd7b140f512a~mv2.png" alt="Alex Xiao" class="team-img"><div class="team-body"><div class="team-role">Lead Engineer</div><div class="team-name">Alex Xiao</div><div class="team-bio">Where precision meets passion. The standard is always excellence.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_354516c124e3462187591f80dca747d6~mv2.png" alt="Lilly Liao" class="team-img"><div class="team-body"><div class="team-role">Quality Control</div><div class="team-name">Lilly Liao</div><div class="team-bio">Detail is everything. Nothing leaves without her approval.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_21d371e939d84954b643fae332d401fa~mv2.png" alt="Eric Zhou" class="team-img"><div class="team-body"><div class="team-role">Product Manager</div><div class="team-name">Eric Zhou</div><div class="team-bio">Built to perform. Every system, refined.</div></div></div>
-    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_03fa0865bd854d6bb50de7632058b5a0~mv2.png" alt="Paul Zhong" class="team-img"><div class="team-body"><div class="team-role">Engineer &amp; Factory Owner</div><div class="team-name">Paul Zhong</div><div class="team-bio">The man behind the machine. A decade of trust, built from the ground up.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_12094e0080ee46918cb281300b8b17eb~mv2.png" alt="Farah Barnes" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Architect, Founder</div><div class="team-name">Farah Barnes</div><div class="team-bio">25+ years at the forefront of design and innovation. A serial entrepreneur who shapes industries.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_63a3dda2273b4f3fb4b9fcda30106bcc~mv2.png" alt="Julian Barnes" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Co-Founder &amp; Tech Lead</div><div class="team-name">Julian Barnes</div><div class="team-bio">Strategic thinking meets cultural curiosity. A gamer at heart who proves the best ideas live at the intersection of logic, play, and art.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_04c5baf4c35f4abb9e04ef10a5c29374~mv2.png" alt="Trent Van Blaricom" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Architect, Managing Director</div><div class="team-name">Trent Van Blaricom</div><div class="team-bio">30+ years in lighting design and management. Sees both the big picture and the finest detail.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_2aabb72e354f4bad9ffa0063ec7ae914~mv2.png" alt="Sean Ghazavi" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Engineer &amp; Product Director</div><div class="team-name">Sean Ghazavi</div><div class="team-bio">Bridges vision and reality through engineering, manufacturing, and prototyping.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_be732d19690c4d7f9024dd7b140f512a~mv2.png" alt="Alex Xiao" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Lead Engineer</div><div class="team-name">Alex Xiao</div><div class="team-bio">Where precision meets passion. The standard is always excellence.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_354516c124e3462187591f80dca747d6~mv2.png" alt="Lilly Liao" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Quality Control</div><div class="team-name">Lilly Liao</div><div class="team-bio">Detail is everything. Nothing leaves without her approval.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_21d371e939d84954b643fae332d401fa~mv2.png" alt="Eric Zhou" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Product Manager</div><div class="team-name">Eric Zhou</div><div class="team-bio">Built to perform. Every system, refined.</div></div></div>
+    <div class="team-card"><img src="https://static.wixstatic.com/media/990d0d_03fa0865bd854d6bb50de7632058b5a0~mv2.png" alt="Paul Zhong" class="team-img" loading="lazy"><div class="team-body"><div class="team-role">Engineer &amp; Factory Owner</div><div class="team-name">Paul Zhong</div><div class="team-bio">The man behind the machine. A decade of trust, built from the ground up.</div></div></div>
   </div>
 </section>
 
@@ -1724,144 +1765,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
   </div>
 </section>
 
-<!-- SECOND BUY SECTION — above FAQ -->
-<section class="sec sec-dark">
-  <span class="sec-tag slide-in">Limited Founders Edition</span>
-  <h2 class="sec-h slide-in">Ready to Order?</h2>
-  <span class="sec-sub3 slide-in">Only 50 Units &mdash; Ships August 2026</span>
 
-  <div class="ship-selector-wrap slide-in" style="margin-top:0" id="bottom-selector">
-    <div class="ship-selector-title">Select Your Region &amp; Size</div>
-    <select class="ship-region-select" id="bottom-region" onchange="bottomCalc()">
-      <option value="">&#127758; Choose your country&hellip;</option>
-      <optgroup label="─── North America ───────────────">
-        <option value="usa">&#127482;&#127480; United States (DDP — duties included)</option>
-        <option value="north_america">&#127464;&#127462; Canada</option>
-        <option value="north_america">&#127474;&#127485; Mexico</option>
-        <option value="north_america">&#127477;&#127479; Puerto Rico</option>
-        <option value="north_america">&#127465;&#127476; Dominican Republic</option>
-        <option value="north_america">&#127471;&#127474; Jamaica</option>
-        <option value="north_america">&#127481;&#127481; Trinidad &amp; Tobago</option>
-        <option value="north_america">&#127463;&#127480; Bahamas</option>
-        <option value="north_america">&#127463;&#127463; Barbados</option>
-      </optgroup>
-      <optgroup label="─── Europe ──────────────────────">
-        <option value="europe">&#127462;&#127481; Austria</option>
-        <option value="europe">&#127463;&#127466; Belgium</option>
-        <option value="europe">&#127463;&#127462; Bosnia &amp; Herzegovina</option>
-        <option value="europe">&#127463;&#127468; Bulgaria</option>
-        <option value="europe">&#127469;&#127479; Croatia</option>
-        <option value="europe">&#127464;&#127487; Czech Republic</option>
-        <option value="europe">&#127465;&#127472; Denmark</option>
-        <option value="europe">&#127467;&#127470; Finland</option>
-        <option value="europe">&#127467;&#127479; France</option>
-        <option value="europe">&#127465;&#127466; Germany</option>
-        <option value="europe">&#127468;&#127479; Greece</option>
-        <option value="europe">&#127469;&#127482; Hungary</option>
-        <option value="europe">&#127470;&#127480; Iceland</option>
-        <option value="europe">&#127470;&#127466; Ireland</option>
-        <option value="europe">&#127470;&#127481; Italy</option>
-        <option value="europe">&#127473;&#127470; Liechtenstein</option>
-        <option value="europe">&#127473;&#127481; Lithuania</option>
-        <option value="europe">&#127473;&#127482; Luxembourg</option>
-        <option value="europe">&#127474;&#127464; Monaco</option>
-        <option value="europe">&#127475;&#127473; Netherlands</option>
-        <option value="europe">&#127475;&#127476; Norway</option>
-        <option value="europe">&#127477;&#127473; Poland</option>
-        <option value="europe">&#127477;&#127481; Portugal</option>
-        <option value="europe">&#127479;&#127476; Romania</option>
-        <option value="europe">&#127479;&#127480; Russia</option>
-        <option value="europe">&#127480;&#127479; Serbia</option>
-        <option value="europe">&#127480;&#127472; Slovakia</option>
-        <option value="europe">&#127466;&#127480; Spain</option>
-        <option value="europe">&#127480;&#127466; Sweden</option>
-        <option value="europe">&#127464;&#127469; Switzerland</option>
-        <option value="europe">&#127481;&#127479; Turkey</option>
-        <option value="europe">&#127468;&#127463; United Kingdom</option>
-      </optgroup>
-      <optgroup label="─── Middle East ─────────────────">
-        <option value="middle_east">&#127462;&#127487; Azerbaijan</option>
-        <option value="middle_east">&#127463;&#127469; Bahrain</option>
-        <option value="middle_east">&#127470;&#127473; Israel</option>
-        <option value="middle_east">&#127471;&#127476; Jordan</option>
-        <option value="middle_east">&#127472;&#127484; Kuwait</option>
-        <option value="middle_east">&#127473;&#127463; Lebanon</option>
-        <option value="middle_east">&#127476;&#127474; Oman</option>
-        <option value="middle_east">&#127480;&#127462; Saudi Arabia</option>
-        <option value="middle_east">&#127462;&#127466; UAE</option>
-        <option value="middle_east">&#127482;&#127487; Uzbekistan</option>
-      </optgroup>
-      <optgroup label="─── Qatar (Special Rate) ────────">
-        <option value="qatar">&#127478;&#127462; Qatar</option>
-      </optgroup>
-      <optgroup label="─── Asia Pacific &amp; South Asia ────">
-        <option value="asia_pacific">&#127463;&#127465; Bangladesh</option>
-        <option value="asia_pacific">&#127464;&#127475; China</option>
-        <option value="asia_pacific">&#127469;&#127472; Hong Kong SAR</option>
-        <option value="asia_pacific">&#127470;&#127475; India</option>
-        <option value="asia_pacific">&#127470;&#127465; Indonesia</option>
-        <option value="asia_pacific">&#127471;&#127477; Japan</option>
-        <option value="asia_pacific">&#127472;&#127479; South Korea</option>
-        <option value="asia_pacific">&#127474;&#127476; Macao SAR</option>
-        <option value="asia_pacific">&#127474;&#127483; Maldives</option>
-        <option value="asia_pacific">&#127474;&#127486; Malaysia</option>
-        <option value="asia_pacific">&#127475;&#127477; Nepal</option>
-        <option value="asia_pacific">&#127477;&#127472; Pakistan</option>
-        <option value="asia_pacific">&#127477;&#127469; Philippines</option>
-        <option value="asia_pacific">&#127480;&#127468; Singapore</option>
-        <option value="asia_pacific">&#127473;&#127472; Sri Lanka</option>
-        <option value="asia_pacific">&#127481;&#127484; Taiwan</option>
-        <option value="asia_pacific">&#127481;&#127469; Thailand</option>
-        <option value="asia_pacific">&#127483;&#127475; Vietnam</option>
-      </optgroup>
-      <optgroup label="─── Oceania ─────────────────────">
-        <option value="oceania">&#127462;&#127482; Australia</option>
-        <option value="oceania">&#127475;&#127487; New Zealand</option>
-      </optgroup>
-      <optgroup label="─── Latin America ───────────────">
-        <option value="latin_america">&#127462;&#127479; Argentina</option>
-        <option value="latin_america">&#127463;&#127476; Bolivia</option>
-        <option value="latin_america">&#127463;&#127479; Brazil</option>
-        <option value="latin_america">&#127464;&#127473; Chile</option>
-        <option value="latin_america">&#127464;&#127476; Colombia</option>
-        <option value="latin_america">&#127464;&#127479; Costa Rica</option>
-        <option value="latin_america">&#127466;&#127464; Ecuador</option>
-        <option value="latin_america">&#127468;&#127481; Guatemala</option>
-        <option value="latin_america">&#127477;&#127462; Panama</option>
-        <option value="latin_america">&#127477;&#127466; Peru</option>
-        <option value="latin_america">&#127477;&#127486; Paraguay</option>
-        <option value="latin_america">&#127482;&#127486; Uruguay</option>
-      </optgroup>
-      <optgroup label="─── Africa ──────────────────────">
-        <option value="africa">&#127466;&#127468; Egypt</option>
-        <option value="africa">&#127487;&#127462; South Africa</option>
-      </optgroup>
-    </select>
-
-    <!-- Breakdown -->
-    <div class="ship-breakdown" id="bottom-breakdown">
-      <div>
-        <div class="ship-row"><span class="ship-row-label">PRO &mdash; Early Bird</span><span class="ship-row-val red" id="b-pro-price">$517</span></div>
-        <div class="ship-row"><span class="ship-row-label">DHL Air Freight</span><span class="ship-row-val" id="b-pro-ship">&mdash;</span></div>
-        <div class="ship-row"><span class="ship-row-label">Estimated Transit</span><span class="ship-row-val cy" id="b-pro-days">&mdash;</span></div>
-        <div class="ship-row-total"><span class="ship-total-label">PRO Total</span><div class="ship-total-val" id="b-pro-total">&mdash;</div></div>
-      </div>
-      <div class="ship-ddp-note" id="bottom-ddp-note"></div>
-      <div style="margin-top:1px">
-        <div class="ship-row" style="background:rgba(0,229,255,0.03)"><span class="ship-row-label">NANO &mdash; Early Bird + 2 Arts</span><span class="ship-row-val cy" id="b-nano-price">$419</span></div>
-        <div class="ship-row" style="background:rgba(0,229,255,0.03)"><span class="ship-row-label">DHL Air Freight</span><span class="ship-row-val" id="b-nano-ship">&mdash;</span></div>
-        <div class="ship-row" style="background:rgba(0,229,255,0.03)"><span class="ship-row-label">Estimated Transit</span><span class="ship-row-val cy" id="b-nano-days">&mdash;</span></div>
-        <div class="ship-row-total" style="background:rgba(0,229,255,0.06);border-color:rgba(0,229,255,0.2)"><span class="ship-total-label">NANO Total</span><div class="ship-total-val" style="color:var(--cy)" id="b-nano-total">&mdash;</div></div>
-      </div>
-    </div>
-
-    <!-- Buy buttons — dimmed until region selected -->
-    <div class="ship-btn-row" style="margin-top:20px">
-      <a id="bottom-btn-pro" href="#" class="btn btn-pro" style="opacity:0.35;pointer-events:none">PRO &mdash; $517 Early Bird</a>
-      <a id="bottom-btn-nano" href="#" class="btn btn-nano" style="opacity:0.35;pointer-events:none">NANO &mdash; $419 + 2 Arts</a>
-    </div>
-  </div>
-</section>
 
 <!-- SECOND BUY SECTION — above FAQ -->
 <section class="sec sec-alt" id="order-now">
@@ -1870,7 +1774,7 @@ p,h1,h2,h3,h4,span,div{-webkit-user-select:none;-moz-user-select:none;-ms-user-s
   <span class="sec-sub3 slide-in">Only 50 Units &mdash; Ships August 2026</span>
 
   <div class="ship-selector-wrap slide-in">
-    <div class="ship-selector-title">Select Your Region &amp; Size</div>
+    <div class="ship-selector-title">Select Your Region &amp; Size for DHL Shipping Rate</div>
     <select class="ship-region-select" id="bottom-region" onchange="bottomCalc()">
       <option value="">&#127758; Choose your country&hellip;</option>
       <optgroup label="─── North America ───────────────">
